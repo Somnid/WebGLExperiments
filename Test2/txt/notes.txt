@@ -1,0 +1,23 @@
+Steps for shader compiling:
+-make empty shader
+	gl.createShader(gl.VERTEX_SHADER/gl.FRAGMENT_SHADER)
+	returns shader (empty)
+-attach source to new hader
+	gl.shaderSource(shader, SHADER_TEXT)
+-compile shader with source
+	gl.compileShader(shader)
+	may check for compile errors
+
+Steps for compiling program:
+-make gl program
+	gl.createProgram(gl)
+-attach compiled shaders
+	gl.attachShader(program, shader)
+-link program
+	gl.linkProgram(program)
+-use program
+	gl.useProgram(program)
+	
+
+
+	

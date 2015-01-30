@@ -1,0 +1,48 @@
+Steps for shader compiling:
+-make empty shader
+	gl.createShader(gl.VERTEX_SHADER/gl.FRAGMENT_SHADER)
+	returns shader (empty)
+-attach source to new hader
+	gl.shaderSource(shader, SHADER_TEXT)
+-compile shader with source
+	gl.compileShader(shader)
+	may check for compile errors
+
+Steps for compiling program:
+-make gl program
+	gl.createProgram(gl)
+-attach compiled shaders
+	gl.attachShader(program, shader)
+-link program
+	gl.linkProgram(program)
+-use program
+	gl.useProgram(program)
+	
+Steps for attribute buffer binding:
+-get shader program var pointers
+	var positionLocation = gl.getAttribLocation(program, SHADER_VAR_NAME);
+-enable attribute array
+	gl.enableVertexAttribArray(positionLocation);
+-create a buffer
+	var vertexPositionBuffer = gl.createBuffer();
+-bind buffer
+	gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
+-create data array
+	var vertices = new Float32Array([
+		 0.75,  0.75, 
+		-0.75,  0.75,
+		 0.75, -0.75,
+		-0.75, -0.75
+	])
+-set buffer data
+	gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+-specify buffer properties
+	gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+	
+Steps for rendering:
+-setup viewport
+	gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+-clear buffer
+	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+-draw array buffers
+	gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);

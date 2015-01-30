@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>WebGL Test 6 (Lighting)</title>
+		<link rel="stylesheet" href="css/index.css"></script>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500">
+		</canvas>
+		<div>Directional Light</div>
+		<ul>
+			<li>
+				<label>X</label>
+				<input id="light-x" type="text" value="0" />
+			</li>
+			<li>
+				<label>Y</label>
+				<input id="light-y" type="text" value="0" />
+			</li>
+			<li>
+				<label>Z</label>
+				<input id="light-z" type="text" value="-1" />
+			</li>
+			<li>
+				<label>R</label>
+				<input id="light-r" type="text" value="1" />
+			</li>
+			<li>
+				<label>G</label>
+				<input id="light-g" type="text" value="1" />
+			</li>
+			<li>
+				<label>B</label>
+				<input id="light-b" type="text" value="1" />
+			</li>
+		</ul>
+		
+		<script src="lib/ajax.js"></script>
+		<script src="lib/JSONA.js"></script>
+		<script src="lib/resource-loader.js"></script>
+		<script src="lib/glHelper.js"></script>
+		<script src="lib/glMatrix.js"></script>
+		<script src="js/model.js"></script>
+		<script src="js/color.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>
